@@ -1,5 +1,6 @@
 # Concrete-Crack-Detection
 
+### UPDATE(3/23/2019): Currently porting this to PyTorch as I'm out of touch with TensorFlow. Should be done in a week.
 This repository contains the code for crack detection in concrete surfaces. It is a TensorFlow implementation of the paper by by Young-Jin Cha and Wooram Choi - "Deep Learning-Based Crack Damage Detection Using Convolutional Neural Networks".
 
 ![CNN_Archi](https://user-images.githubusercontent.com/32497274/34506710-30363d94-effd-11e7-864a-bec0d7153721.PNG)
