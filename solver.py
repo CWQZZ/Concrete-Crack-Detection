@@ -9,6 +9,7 @@ from PIL import Image
 import os
 import numpy as np
 from datetime import datetime
+
 class Solver():
 
     def __init__(self, config):
