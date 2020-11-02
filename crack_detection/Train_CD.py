@@ -1,12 +1,10 @@
-"""
-Code to train the model
-"""
+"""Module to train the model."""
+
 import tensorflow as tf
 import numpy as np
 import time
 from datetime import timedelta
 from dataset import load_cached
-#from matplotlib.image import imread
 import cv2,sys,argparse
 
 #Initialzing the conv and max_pool layers
@@ -35,14 +33,15 @@ def new_conv_layer(input,              # The previous layer.
 
     return layer
 
-####################################################
-def max_pool(layer,ksize,strides):
+
+def max_pool(layer,ksize, strides):
     layer = tf.nn.max_pool(value=layer,
                            ksize=ksize,
                            strides = strides,
                            padding = 'VALID')
     return layer
-####################################################
+
+
 def new_fc_layer(input,           # The previous layer.
                  num_inputs,      # Num. inputs from prev. layer.
                  num_outputs,     # Num. outputs
@@ -64,7 +63,8 @@ def new_fc_layer(input,           # The previous layer.
         layer = tf.nn.relu(layer)
 
     return layer    
-####################################################
+
+
 def flatten_layer(layer):
     # Get the shape of the input layer.
     layer_shape = layer.get_shape()
@@ -80,7 +80,7 @@ def flatten_layer(layer):
     # [num_images, img_height * img_width * num_channels]
 
     return layer_flat, num_features
-####################################################
+
     
 class Model:
     def __init__(self,in_dir,save_folder=None):
@@ -317,7 +317,3 @@ def  main(args):
     
 if __name__ == '__main__':
     main(sys.argv)
-
-
-
-
